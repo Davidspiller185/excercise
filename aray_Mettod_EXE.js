@@ -34,3 +34,8 @@ const arrSort = arr3.sort((a,b) => b-a)
 console.log(arrSort)
 
 // תרגיל 29
+const arr4 = [20,34,56,80,90]
+arr4.splice(1,2)
+console.log(arr4)
+
+
