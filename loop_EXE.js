@@ -90,6 +90,13 @@ while (input !== 0){
     input = Number(promot("Enter number"))
 }
 console.log(sum_number)
+//שאלה 12
+const secret = 7
+const prompt = require("prompt-sync")()
+let input = Number(prompt("enter number"))
+while(input !== secret){
+    input = Number(prompt("enter number"))
+}
 
 // שאלה 13
 
@@ -99,6 +106,15 @@ while (x < 20){
     x+=1
 }
 
+//שאלה 14
+let password = ""
+const prompt = require("prompt-sync")()
+password = prompt("Enter a password")
+while (password !== "1234"){
+    password = prompt("Enter a password")
+}
+
+
 // תרגיל 15
 
 let count = 0
@@ -107,6 +123,14 @@ do {
 }while (count > 0){
     count+=1
     console.log(count)
+}
+
+//תרגיל 16
+let choice
+const prompt = require("prompt-sync")()
+choice = prompt("to enter press: 1, to exit press:exit")
+while (choice !== "exit"){
+    choice = prompt("to enter press: 1, to exit press:exit")
 }
 
 // תרגיל 17
@@ -137,12 +161,93 @@ for (let num of ages){
         break
     }
 }
+
+//תרגיל 20
+const arr = [10,20,30,40,50]
+for (num of arr){
+    console.log(num)
+}
+
+// תרגיל 21
+const numbers = [1,2,3,4,5,6]
+let total =0
+for (num of numbers){
+    if (num %2 === 0){
+        total +=num
+    }
+}
+console.log(total)
+
+//תרגיל 22
+const target = 25;
+const numbers = [10, 15, 20, 25, 30];
+let flag = false
+for (num of numbers){
+    if (num === target){
+        flag = true
+        console.log("found target")
+    }
+}
+if (!flag){
+    console.log("not found target")
+}
+
 // תרגיל 23
 const word = "hello world"
 for (let char of word){
     console.log(char.toUpperCase())
 }
 
+// תרגיל 24
+const numbers = [2, 4, 6, 8, 10, 12,13]
+for (const num of numbers){
+    if (num >8 && num %2 === 0){
+        break
+    }
+    else{
+        console.log(num)
+    }
+}
+
+
+// תרגיל 1
+const age = 20
+if (age>=18){
+    console.log("מבוגר")
+}
+else{
+    console.log("קטין")
+}
+
+// תרגיל 2
+const number = 7
+if (number % 2 === 0){
+    console.log("even")
+}
+else{
+    console.log("not even")
+}
+
+// תרגיל 3
+const isLoggedIn = true
+if (isLoggedIn){
+    console.log("ברוך הבא")
+}
+else{
+    console.log("אנא התחבר")
+}
+
+// תרגיל 4
+const num = -5
+if (num >0){
+    console.log("חיובי")
+}
+else if (num === 0){
+    console.log("אפס")
+}
+else{
+    console.log("שלילי")
+}
 
 
 
