@@ -38,4 +38,8 @@ const arr4 = [20,34,56,80,90]
 arr4.splice(1,2)
 console.log(arr4)
 
+// תרגיל 32
+const arr5 = [[1,2,3,4,5]]
+const arrFlat = arr5.flat()
+console.log(arrFlat)
 
