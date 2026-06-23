@@ -43,3 +43,10 @@ const arr5 = [[1,2,3,4,5]]
 const arrFlat = arr5.flat()
 console.log(arrFlat)
 
+// תרגיל 36
+const chain = [1,2,3,4,5,6]
+const evens = chain.filter(num => num %2 === 0).map(num => num *2).reduce((acc,curent) => acc+curent,0)
+console.log(evens)
+
+// ת
+
