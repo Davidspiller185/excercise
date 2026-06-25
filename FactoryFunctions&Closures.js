@@ -180,7 +180,129 @@ function factory(name,price,stock = 0){
 const factor =factory("telephon",120,240) 
 console.log(factor()) 
 
-// תרגיל 16
+
+// תרגיל 19
+function multiplier(num1){
+    return function double(num2){
+        return num1 * num2
+    }
+    
+}
+const muliObject = multiplier(2)
+console.log(muliObject(10))
+
+// תרגיל 20
+function getSrting(str){
+    let prefix = "hello "
+    return function (){
+        prefix = prefix + str
+        return prefix
+    }
+
+}
+const get = getSrting("dana")
+console.log(get())
+
+// 23,22,תרגיל 21
+function saveMessage(){
+    let counter = 1
+    let arr
+    if (counter === 1){
+            arr = []
+    }
+     function addMessage(message){
+        arr.push(message)
+        counter ++
+        return `add message ${message}`
+        
+    }
+    function returnMessage(){
+        return arr
+    }
+    function deleteMessage(index){
+        let flage = false
+        for (let i =0; i<arr.length; i++){
+            if (i === index){
+                flage = true
+                arr.splice(index,1)
+                return "deleted message"
+            }
+        }
+        if (!flage){
+            return "index not in arr"
+
+        }
+
+    }
+    return {
+        addMessage,
+        returnMessage,
+        deleteMessage
+    }
+
+}
+let objMessage = saveMessage()
+console.log(objMessage.addMessage("my name is david"))
+console.log(objMessage.addMessage("my name is Avi"))
+console.log(objMessage.returnMessage())
+console.log(objMessage.deleteMessage(1))
+console.log(objMessage.returnMessage())
+
+// תרגיל 24
+function userFactory(name){
+    let counter = 0
+    return  function login(){
+        counter ++
+        return {name,counter}
+    }
+
+}
+const userFactor = userFactory("david")
+console.log(userFactor())
+console.log(userFactor())
+
+// תרגיל 25
+function roles(){
+    const arrRoles = []
+    let object = {"roles":arrRoles}
+    function add (roles){
+        arrRoles.push(roles)
+        object.roles = arrRoles
+        return object
+    }
+    function remove(roles){
+        let flage =false
+        for (let i = 0; i<object.roles.length; i++){
+            if (object.roles[i] === roles){
+                flage = true
+                object.roles.splice(i,1)
+            } 
+        }
+        if (!flage){
+            return "ca nor remove, roles not exciste "
+        }
+        return object
+    }
+    function chechAdd(roles){
+        for (let i = 0; i<object.roles.length; i++){
+            if (object.roles[i] === roles){
+                return true
+    }
+    return false
+} }
+    return {
+        add,
+        remove,
+        chechAdd
+    }
+}
+const role = roles()
+console.log(role.add("write"))
+console.log(role.add("read"))
+console.log(role.remove("write"))
+console.log(role.chechAdd("read"))
+
+
 
 
 
